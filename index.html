@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Inflasi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏦 Kalkulator Inflasi</h1>
+            <p>Menghitung perubahan nilai uang dari tahun ke tahun</p>
+        </header>
+
+        <main>
+            <div class="calculator-section">
+                <div class="input-group">
+                    <label for="initial-amount">Jumlah Uang (Rp)</label>
+                    <input type="number" id="initial-amount" placeholder="Masukkan jumlah uang" value="1000000">
+                </div>
+
+                <div class="input-group">
+                    <label for="initial-year">Tahun Awal</label>
+                    <input type="number" id="initial-year" placeholder="Tahun awal" value="2010" min="1970" max="2023">
+                </div>
+
+                <div class="input-group">
+                    <label for="target-year">Tahun Target</label>
+                    <input type="number" id="target-year" placeholder="Tahun target" value="2023" min="1970" max="2023">
+                </div>
+
+                <button id="calculate-btn" class="calculate-btn">Hitung Inflasi</button>
+            </div>
+
+            <div class="results-section" id="results-section">
+                <div class="result-card">
+                    <h3>Hasil Perhitungan</h3>
+                    <div class="result-item">
+                        <span class="label">Nilai Awal:</span>
+                        <span class="value" id="initial-value">Rp 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Nilai Ekuivalen Sekarang:</span>
+                        <span class="value" id="current-value">Rp 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Total Inflasi:</span>
+                        <span class="value" id="total-inflation">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Rata-rata Inflasi/Tahun:</span>
+                        <span class="value" id="average-inflation">0%</span>
+                    </div>
+                </div>
+
+                <div class="explanation">
+                    <h4>💡 Penjelasan</h4>
+                    <p id="explanation-text">
+                        Masukkan jumlah uang dan tahun untuk melihat bagaimana inflasi mempengaruhi daya beli Anda.
+                    </p>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <h3>📈 Grafik Inflasi Indonesia</h3>
+                <canvas id="inflation-chart"></canvas>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data inflasi berdasarkan data historis Indonesia. Gunakan sebagai referensi perencanaan keuangan.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
